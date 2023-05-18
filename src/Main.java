@@ -32,7 +32,6 @@ public class Main {
         users.clear();
         users.addAll(userSet);
         users.sort(Comparator.comparing(User::getAge).thenComparing(User::getName));
-//        Collections.sort(users, Comparator.comparing(User::getAge).thenComparing(User::getName));
         List<User> userList = new ArrayList<>();
         int oldestAge = users.get(users.size() - 1).getAge();
         for (User user : users) {
