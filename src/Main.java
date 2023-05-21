@@ -14,7 +14,6 @@ public class Main {
         User user7 = new User("Olya", 30);
 
         List<User> userList = new ArrayList<>(Arrays.asList(user1, user2, user3, user4, user5, user6, user7));
-//        List<User> userList = Stream.of(user1, user2, user3, user4, user5, user6, user7).collect(Collectors.toList());
         getFirstOldestUser(userList);
         getAllOldestUser(userList);
 
