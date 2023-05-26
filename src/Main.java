@@ -15,8 +15,8 @@ public class Main {
 
         List<User> userList = new ArrayList<>(Arrays.asList(user1, user2, user3, user4, user5, user6, user7));
 //        List<User> userList = Stream.of(user1, user2, user3, user4, user5, user6, user7).collect(Collectors.toList());
-//        getFirstOldestUser(userList);
-//        getAllOldestUser(userList);
+        getFirstOldestUser(userList);
+        getAllOldestUser(userList);
 
         int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         reverse(values);
