@@ -15,8 +15,14 @@ public class Main {
 
         List<User> userList = new ArrayList<>(Arrays.asList(user1, user2, user3, user4, user5, user6, user7));
 //        List<User> userList = Stream.of(user1, user2, user3, user4, user5, user6, user7).collect(Collectors.toList());
-        getFirstOldestUser(userList);
-        getAllOldestUser(userList);
+//        getFirstOldestUser(userList);
+//        getAllOldestUser(userList);
+
+        int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        reverse(values);
+        int[] values1 = {1, 2, 3, 4, 5, 6, 7};
+        reverse1(values1);
+        reverse2(values1);
 
     }
 
@@ -41,6 +47,42 @@ public class Main {
         }
 
         System.out.println(userList);
+    }
+// Переворот массива 1 вариант
+
+    public static void swap(int[] values, int i, int j) {
+        int temp = values[i];
+        values[i] = values[j];
+        values[j] = temp;
+    }
+
+    public static void reverse(int[] values) {
+
+        for (int i = 0, j = values.length - 1; i < j; i++, j--) {
+            swap(values, i, j);
+        }
+        System.out.println(Arrays.toString(values));
+    }
+
+    // Переворот массива 2 вариант используя стек
+
+    public static void reverse1(int[] values) {
+        Stack<Integer> stack = new Stack<>();
+        for (int i: values){
+            stack.push(i);
+        }
+        int index = 0;
+        while (!stack.isEmpty()){
+            values[index++] = stack.pop();
+        }
+        System.out.println(Arrays.toString(values));
+    }
+
+    // Переворот массива 3 вариант используя коллекцию
+    public static void reverse2(int[] values) {
+
+        Collections.reverse(Arrays.asList(values));
+        System.out.println(Arrays.toString(values));
     }
 
 }
